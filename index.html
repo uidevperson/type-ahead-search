@@ -34,7 +34,7 @@
 
     function displayMatches() {
       const matchArray = findMatches(this.value, cities);
-      console.log(matchArray);
+      console.table(matchArray);
     }
 
     const searchInput = document.querySelector('.search');
