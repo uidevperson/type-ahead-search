@@ -21,7 +21,25 @@
     const prom = fetch(endpoint)
       .then(blob => blob.json())
       .then(data => cities.push(...data));
-      console.log(cities);
+      // console.log(cities);
+
+    function findMatches(wordToMatch, cities){
+      return cities.filter(place => {
+        // check if city or stae matches search input
+        const regex = new RegExp(wordToMatch, 'gi');
+
+        return place.city.match(regex) || place.city.match(regex);
+      });
+    }
+
+    function displayMatches() {
+      console.log(this.value);
+    }
+
+    const searchInput = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions');
+    searchInput.addEventListener('change', displayMatches);
+    searchInput.addEventListener('keyup', displayMatches);
     </script>
 </body>
 
